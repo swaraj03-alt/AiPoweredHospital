@@ -10,7 +10,12 @@ import pymysql
 pymysql.install_as_MySQLdb()
 
 from PIL import Image
-import pytesseract
+try:
+    import pytesseract
+    from PIL import Image
+except Exception:
+    pytesseract = None
+
 from flask_mysqldb import MySQL
 from openai import OpenAI
 from werkzeug.security import check_password_hash, generate_password_hash
