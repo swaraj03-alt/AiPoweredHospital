@@ -1,34 +1,40 @@
-import MySQLdb,os
+import os
+import re
+from datetime import datetime
+
+# ✅ MySQL fix for Railway/Linux
+import pymysql
+pymysql.install_as_MySQLdb()
+
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 from dotenv import load_dotenv
 import PyPDF2
 import docx
 import markdown
-import re
-from datetime import datetime
-import pymysql
-pymysql.install_as_MySQLdb()
 
 from PIL import Image
 try:
     import pytesseract
-    from PIL import Image
 except Exception:
-    pytesseract = None
+    pytesseract = None  # Railway-safe fallback
 
 from flask_mysqldb import MySQL
 from openai import OpenAI
 from werkzeug.security import check_password_hash, generate_password_hash
-from flask_mysqldb import MySQL
-
-from werkzeug.security import generate_password_hash
 from werkzeug.utils import secure_filename
-
-UPLOAD_FOLDER = 'static/uploads'  # folder to save uploaded images
 
 
 load_dotenv()
+
+app = Flask(__name__)
+app.secret_key = os.getenv("SECRET_KEY", "railway-secret-key")
+
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+UPLOAD_FOLDER = "static/uploads"
+app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
 app = Flask(__name__)
 
 
@@ -65,17 +71,15 @@ def extract_text_from_image(img_file):
 #         )
 #         response = completion.choices[0].message.content
 #         return render_template("base.html")
-#################################DB Connectivity ##############################################app.config['MYSQL_HOST'] = os.getenv("MYSQL_HOST")
-app.config['MYSQL_USER'] = os.getenv("MYSQL_USER")
-app.config['MYSQL_PASSWORD'] = os.getenv("MYSQL_PASSWORD")
-app.config['MYSQL_DB'] = os.getenv("MYSQL_DATABASE")
-app.config['MYSQL_PORT'] = int(os.getenv("MYSQL_PORT", 3306))
+#################################DB Connectivity ##############################################app.config['MYSQL_HOST'] = os.getenv("MYSQL_HOST")app.config["MYSQL_HOST"] = os.getenv("MYSQL_HOST")
+app.config["MYSQL_USER"] = os.getenv("MYSQL_USER")
+app.config["MYSQL_PASSWORD"] = os.getenv("MYSQL_PASSWORD")
+app.config["MYSQL_DB"] = os.getenv("MYSQL_DATABASE")
+app.config["MYSQL_PORT"] = int(os.getenv("MYSQL_PORT", 3306))
+app.config["MYSQL_CURSORCLASS"] = "DictCursor"
 
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-upload_folder = app.config['UPLOAD_FOLDER']
-if not os.path.exists(upload_folder):
-    os.makedirs(upload_folder)
 mysql = MySQL(app)
+
 
 
 @app.route('/',methods=['GET','POST'])
