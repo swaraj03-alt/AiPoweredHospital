@@ -6,6 +6,8 @@ import docx
 import markdown
 import re
 from datetime import datetime
+import pymysql
+pymysql.install_as_MySQLdb()
 
 from PIL import Image
 import pytesseract
@@ -58,17 +60,18 @@ def extract_text_from_image(img_file):
 #         )
 #         response = completion.choices[0].message.content
 #         return render_template("base.html")
-#################################DB Connectivity ##############################################
-app.config['SECRET_KEY'] = "AI"
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'Swaraj@1'
-app.config['MYSQL_DB'] = 'Hospital'
+#################################DB Connectivity ##############################################app.config['MYSQL_HOST'] = os.getenv("MYSQL_HOST")
+app.config['MYSQL_USER'] = os.getenv("MYSQL_USER")
+app.config['MYSQL_PASSWORD'] = os.getenv("MYSQL_PASSWORD")
+app.config['MYSQL_DB'] = os.getenv("MYSQL_DATABASE")
+app.config['MYSQL_PORT'] = int(os.getenv("MYSQL_PORT", 3306))
+
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 upload_folder = app.config['UPLOAD_FOLDER']
 if not os.path.exists(upload_folder):
     os.makedirs(upload_folder)
 mysql = MySQL(app)
+
 
 @app.route('/',methods=['GET','POST'])
 def index():
@@ -1126,4 +1129,3 @@ def inject_patient():
         cur.close()
     return dict(patient=patient)
 
-app.run(debug=True)
