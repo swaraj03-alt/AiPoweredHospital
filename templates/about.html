@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Medilab</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Optional: Your custom CSS -->
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+
+  {% include 'header.html' %}
+
+
+  <!-- About Section -->
+  <section id="about" class="about section py-5">
+    <div class="container">
+      <div class="row gy-4 gx-5">
+
+        <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
+          <img src="static/img/about.jpg" class="img-fluid" alt="About Us">
+         </div>
+
+        <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+          <h3>About Us</h3>
+          <p>
+            At AI powered Medication, We combine cutting-edge AI technology with compassionate healthcare to provide precise, personalized, and efficient medical services. Our mission is to make healthcare accessible, reliable, and innovative for every patient. </p>
+          <ul class="list-unstyled">
+            <li class="d-flex mb-3">
+              <i class="fa-solid fa-vial-circle-check fa-2x me-3"></i>
+              <div>
+                <h5>AI-Powered Diagnostics</h5>
+                <p>Advanced algorithms help our doctors deliver accurate and early diagnosis.</p>
+              </div>
+            </li>
+            <li class="d-flex mb-3">
+              <i class="fa-solid fa-pump-medical fa-2x me-3"></i>
+              <div>
+                <h5>Experienced Medical Team</h5>
+                <p>ur specialists are highly qualified and continuously trained in modern healthcare techniques.</p>
+              </div>
+            </li>
+            <li class="d-flex mb-3">
+              <i class="fa-solid fa-heart-circle-xmark fa-2x me-3"></i>
+              <div>
+                <h5>Patient-Centric Care</h5>
+                <p>Every treatment plan is tailored to the individual, ensuring comfort and effectiveness.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  {% include 'footer.html' %}
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

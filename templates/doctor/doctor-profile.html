@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Profile</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<style>
+  body { background-color: #f8f9fa; }
+  .sidebar { height: 100vh; background: #0d6efd; color: #fff; }
+  .sidebar a.active { background-color: rgba(255,255,255,0.3); }
+  .content { margin-left: 16.6667%; padding: 20px; }
+
+  /* Profile Card UI */
+  .card {
+    border: none;
+    border-radius: 15px;
+  }
+
+  /* Prevent input "jump" during enable/disable */
+  .form-control {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    color: #212529;
+    font-weight: 500;
+    padding-left: 0;
+    transition: all 0.2s ease-in-out;
+  }
+
+  /* When in editable mode */
+  .form-control.editable {
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    box-shadow: none;
+    color: #212529;
+    font-weight: normal;
+    padding-left: 0.75rem;
+  }
+
+  /* Fix image resizing issue */
+  #profilePreview {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 3px solid #fff;
+    transition: transform 0.3s ease;
+  }
+
+  /* Optional hover zoom effect */
+  #profilePreview:hover {
+    transform: scale(1.02);
+  }
+
+  /* Prevent the image from jumping when editing */
+  #profile_photo {
+    width: 80%;
+    margin: 0 auto;
+  }
+</style>
+
+</head>
+<body>
+
+<div class="content">
+  <div class="container mt-5">
+    <div class="card shadow-sm p-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="text-primary mb-0">My Profile</h3>
+        <button id="editBtn" class="btn btn-primary btn-sm">
+          <i class="bi bi-pencil-square"></i> Edit Profile
+        </button>
+      </div>
+
+      <form id="profileForm" method="POST" action="{{ url_for('update_doctor_profile') }}" enctype="multipart/form-data">
+        <div class="row">
+          <div class="col-md-4 text-center">
+            {% if doctor and doctor.profile_photo %}
+              <img id="profilePreview"
+                   src="{{ url_for('static', filename='uploads/' + doctor.profile_photo) }}"
+                   alt="Doctor Photo"
+                   class="rounded-circle shadow mb-3"
+                   width="120" height="120"
+                   style="object-fit: cover; border: 3px solid #fff;">
+            {% else %}
+              <img id="profilePreview"
+                   src="{{ url_for('static', filename='uploads/default-doctor.png') }}"
+                   alt="Default Doctor"
+                   class="rounded-circle shadow mb-3"
+                   width="120" height="120"
+                   style="object-fit: cover; border: 3px solid #fff;">
+            {% endif %}
+            <input type="file" name="profile_photo" id="profile_photo" class="form-control form-control-sm d-none">
+          </div>
+
+          <div class="col-md-8">
+            <div class="mb-2">
+              <label class="form-label"><strong>Full Name:</strong></label>
+              <input type="text" name="fullname" class="form-control" value="{{ doctor.fullname }}" disabled>
+            </div>
+            <div class="mb-2">
+              <label class="form-label"><strong>Email:</strong></label>
+              <input type="email" name="email" class="form-control" value="{{ doctor.email }}" disabled>
+            </div>
+            <div class="mb-2">
+              <label class="form-label"><strong>Phone:</strong></label>
+              <input type="text" name="phone" class="form-control" value="{{ doctor.phone }}" disabled>
+            </div>
+            <div class="mb-2">
+              <label class="form-label"><strong>Specialization:</strong></label>
+              <input type="text" name="specialization" class="form-control" value="{{ doctor.specialization }}" disabled>
+            </div>
+            <div class="mb-2">
+              <label class="form-label"><strong>Experience (years):</strong></label>
+              <input type="number" name="experience" class="form-control" value="{{ doctor.experience }}" disabled>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between mt-4">
+          <a href="{{ url_for('doctor_dashboard') }}" class="btn btn-secondary">Back to Dashboard</a>
+          <button type="submit" id="saveBtn" class="btn btn-success d-none">
+            <i class="bi bi-save"></i> Save Changes
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const editBtn = document.getElementById('editBtn');
+  const saveBtn = document.getElementById('saveBtn');
+  const inputs = document.querySelectorAll('#profileForm input:not([type=hidden])');
+  const profilePhotoInput = document.getElementById('profile_photo');
+  const profilePreview = document.getElementById('profilePreview');
+
+  // Toggle Edit Mode
+  editBtn.addEventListener('click', () => {
+    const isEditing = editBtn.classList.toggle('btn-danger');
+    editBtn.innerHTML = isEditing
+      ? '<i class="bi bi-x-circle"></i> Cancel'
+      : '<i class="bi bi-pencil-square"></i> Edit Profile';
+
+    inputs.forEach(input => {
+      if (input.name !== "email") input.disabled = !isEditing; // email stays locked
+    });
+
+    profilePhotoInput.classList.toggle('d-none', !isEditing);
+    saveBtn.classList.toggle('d-none', !isEditing);
+  });
+
+  // Preview new profile image
+  profilePhotoInput.addEventListener('change', e => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = e => { profilePreview.src = e.target.result; };
+      reader.readAsDataURL(file);
+    }
+  });
+</script>
+</body>
+</html>

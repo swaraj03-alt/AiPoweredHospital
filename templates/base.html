@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BASE</title>
+</head>
+<body>
+    <H2>talk with AI</h2>
+    <form method="POST" action="">
+        <textarea name=user_input" rows="4" cols="50">
+            <br>
+        </textarea>
+        <button type="submit">Send</button>
+    </form>
+    {% if response %}
+    AI Response: {{response}}
+     {% endif %}
+</body>
+</html>

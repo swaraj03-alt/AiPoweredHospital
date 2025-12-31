@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>AI powered Medication - Home</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="static/img/favicon.png" rel="icon">
+  <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="static/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Medilab
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header sticky-top">
+
+  <div class="topbar d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">Hospital@gmail.com</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </div><!-- End Top Bar -->
+
+  <div class="branding d-flex align-items-center">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+      <a href="#" class="logo d-flex align-items-center me-auto">
+        <h1 class="sitename">AI powered Medication </h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home<br></a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/departments">Departments</a></li>
+          <li><a href="/doctors">Doctors</a></li>
+
+          <!-- Registration Dropdown -->
+          <li class="dropdown">
+            <a href="#"><span>Registration</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="/doctor-register"">Doctor Registration</a></li>
+              <li><a href="/patient-register">Patient Registration</a></li>
+            </ul>
+          </li>
+
+          <!-- Login Dropdown -->
+          <li class="dropdown">
+            <a href="#"><span>Login</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="/doctor-login">Doctor Login</a></li>
+              <li><a href="/patient-login">Patient Login</a></li>
+            </ul>
+          </li>
+
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+     </div>
+  </div>
+</header>
+
+
+{% if response %}
+    <div>
+        <h3>AI Response:</h3>
+        <p>{{ response }}</p>
+    </div>
+{% endif %}
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section light-background">
+
+      <img src="static/img/medical-banner-with-doctor-holding-stethoscope.jpg" alt="" data-aos="fade-in">
+
+      <div class="container position-relative">
+
+        <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
+          <h2>WELCOME TO AI powered Medication </h2>
+         </div><!-- End Welcome -->
+
+        <div class="content row gy-4">
+          <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
+              <h3>Why Choose AI powered Medication ?</h3>
+              <p>
+                AI-driven medication solutions combine advanced data analysis, predictive algorithms, and personalized treatment plans to ensure faster, safer, and more effective healthcare outcomes. By leveraging AI, medical professionals can minimize human error, optimize treatments, and enhance patient care.
+              </p>
+              <div class="text-center">
+                <a href="/about" class="more-btn"><span>Learn More</span> <i class="bi bi-chevron-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End Why Box -->
+
+          <div class="col-lg-8 d-flex align-items-stretch">
+            <div class="d-flex flex-column justify-content-center">
+              <div class="row gy-4">
+
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box" data-aos="zoom-out" data-aos-delay="300">
+                    <i class="bi bi-clipboard-data"></i>
+                    <h4>Personalized Treatment Plans</h4>
+                    <p>AI analyzes your medical history and recommends medications tailored to your needs.</p>
+                  </div>
+                </div><!-- End Icon Box -->
+
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box" data-aos="zoom-out" data-aos-delay="400">
+                    <i class="bi bi-gem"></i>
+                    <h4>Faster Diagnosis & Prescription</h4>
+                    <p>Advanced algorithms quickly identify the right medications and dosage.</p>
+                  </div>
+                </div><!-- End Icon Box -->
+
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box" data-aos="zoom-out" data-aos-delay="500">
+                    <i class="bi bi-inboxes"></i>
+                    <h4>Cost-Effective Healthcare</h4>
+                    <p>Optimizes treatments to reduce unnecessary tests and medication.</p>
+                  </div>
+                </div><!-- End Icon Box -->
+
+              </div>
+            </div>
+          </div>
+        </div><!-- End  Content-->
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section light-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="fa-solid fa-user-doctor"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Doctors</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="fa-regular fa-hospital"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Departments</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="fas fa-flask"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Research Labs</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="fas fa-award"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Awards</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+
+
+
+
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Frequently Asked Questions</h2>
+        <p>Find answers to the most common questions about our services, appointments, and AI-powered healthcare solutions. We’re here to make your experience smooth, transparent, and stress-free.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row justify-content-center">
+
+          <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="faq-container">
+
+              <div class="faq-item faq-active">
+                <h3>How do I book an appointment?</h3>
+                <div class="faq-content">
+                  <p>You can book an appointment online via our website or mobile app, choosing your preferred doctor and time slot.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3>Is my medical data secure?</h3>
+                <div class="faq-content">
+                  <p>Yes, all patient data is securely encrypted and stored, ensuring complete privacy and confidentiality.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3>Can I consult with a doctor remotely?</h3>
+                <div class="faq-content">
+                  <p> Absolutely! We offer teleconsultation options for patients who cannot visit the clinic in person.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3>Do I need to create an account to book an appointment?</h3>
+                <div class="faq-content">
+                  <p>Yes, registering as a patient allows you to manage appointments, view history, and access personalized healthcare recommendations.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3>What makes AI-powered medication different?</h3>
+                <div class="faq-content">
+                  <p>Our AI analyzes patient data to provide precise, personalized treatment suggestions, improving accuracy and efficiency in diagnosis and therapy.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+
+            </div>
+
+          </div><!-- End Faq Column-->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Faq Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+
+      <div class="container">
+
+        <div class="row align-items-center">
+
+          <div class="col-lg-5 info" data-aos="fade-up" data-aos-delay="100">
+            <h3>Testimonials</h3>
+            <p>
+            Our Patients’ Feedback
+            </p>
+          </div>
+
+          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <div class="d-flex">
+                      <img src="static/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="">
+                      <div>
+                        <h3>Saul Goodman</h3>
+                        <h4>Ceo &amp; Founder</h4>
+                        <div class="stars">
+                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      <span>The AI-powered system helped me get a precise diagnosis quickly. The appointment was seamless, and the doctors were very attentive.</span>
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
+                  </div>
+                </div><!-- End testimonial item -->
+
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <div class="d-flex">
+                      <img src="static/img/testimonials/testimonials-2.jpg" class="testimonial-img flex-shrink-0" alt="">
+                      <div>
+                        <h3>Sara Wilsson</h3>
+                        <h4>Designer</h4>
+                        <div class="stars">
+                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      <span>Booking an appointment online was super easy. I loved how my medical history was securely stored and accessible during my consultation</span>
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
+                  </div>
+                </div><!-- End testimonial item -->
+
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <div class="d-flex">
+                      <img src="static/img/testimonials/testimonials-3.jpg" class="testimonial-img flex-shrink-0" alt="">
+                      <div>
+                        <h3>Jena Karlis</h3>
+                        <h4>Store Owner</h4>
+                        <div class="stars">
+                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      <span>Excellent care and minimal waiting time! The combination of AI and experienced doctors made my treatment very efficient.</span>
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
+                  </div>
+                </div><!-- End testimonial item -->
+
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <div class="d-flex">
+                      <img src="static/img/testimonials/testimonials-4.jpg" class="testimonial-img flex-shrink-0" alt="">
+                      <div>
+                        <h3>Matt Brandon</h3>
+                        <h4>Freelancer</h4>
+                        <div class="stars">
+                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      <span>I highly recommend this hospital. The personalized treatment and friendly staff made my experience stress-free and reassuring</span>
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
+                  </div>
+                </div><!-- End testimonial item -->
+
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <div class="d-flex">
+                      <img src="static/img/testimonials/testimonials-5.jpg" class="testimonial-img flex-shrink-0" alt="">
+                      <div>
+                        <h3>John Larson</h3>
+                        <h4>Entrepreneur</h4>
+                        <div class="stars">
+                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
+                  </div>
+                </div><!-- End testimonial item -->
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Gallery</h2>
+        <p></p>
+      </div><!-- End Section Title -->
+
+      <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-0">
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="static/img/gallery/gallery-1.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="static/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="static/img/gallery/gallery-2.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="static/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="static/img/gallery/gallery-3.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="static/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="static/img/gallery/gallery-4.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="static/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="static/img/gallery/gallery-5.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="static/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="static/img/gallery/gallery-6.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="static/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="static/img/gallery/gallery-7.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="static/img/gallery/gallery-7.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="static/img/gallery/gallery-8.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="static/img/gallery/gallery-8.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Gallery Section -->
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">AI powered Medication </span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Rathi Nagar</p>
+            <p>Amravati, 444602</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+            <p><strong>Email:</strong> <span>info@example.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="/about">About us</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+      <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="/services">AI-Powered Diagnostics</a></li>
+            <li><a href="/services">General Consultation</a></li>
+            <li><a href="/services">Emergency Care</a></li>
+            <li><a href="/services">Specialized Treatments</a></li>
+            <li><a href="/services">Telemedicine</a></li>
+          </ul>
+        </div>
+
+
+
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">AI powered Medication </strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/vendor/php-email-form/validate.js"></script>
+  <script src="static/vendor/aos/aos.js"></script>
+  <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="static/js/main.js"></script>
+
+</body>
+
+</html>
