@@ -472,7 +472,7 @@ def view_prescription(symptom_id):
 # MEDICAL RECORDS (PATIENT)
 # =========================================================
 @app.route("/medical-records", methods=["GET", "POST"])
-def medical_records():
+def medical_records_page():
     if "patient_email" not in session:
         flash("Please login first.", "error")
         return redirect(url_for("patient_login"))
